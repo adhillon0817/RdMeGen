@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
 
+const { fstat } = require("fs");
+
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -48,6 +50,10 @@ const questions = [
         name: 'gitHub',
         message: "What is your GitHub username?",
     },
+
+function writeToFile(fileName, data){
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+}
 ];
 
 // TODO: Create a function to write README file
